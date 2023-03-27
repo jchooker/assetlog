@@ -1,0 +1,48 @@
+﻿@model Asset
+<!--EDIT MODAL-->
+<div class="modal" tabindex="-1" id="editAssetModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modalCap1">
+                <h5 class="modal-title">Edit XXXXX Asset</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-action="Edit" id="editAssetSubmit">
+                    <fieldset>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label asp-for="Category" for="categoryInput" class="ms-2 form-label">Category (Laptop, Monitor, etc)</label>
+                                <input asp-for="Category" id="categoryInput" class="form-control" placeholder="Category" type="text" />
+
+                                <label asp-for="Brand" for="brandInput" class="ms-2 form-label">Brand (Sony, Dell, etc)</label>
+                                <input asp-for="Brand" id="brandInput" class="form-control" placeholder="Brand" type="text" />
+
+                                <label asp-for="Model" for="modelInput" class="ms-2 form-label">Model (XR-1000, ImagePro, etc)</label>
+                                <input asp-for="Model" id="modelInput" class="form-control" placeholder="Model" type="text" />
+
+                                <label asp-for="SerialNumber" for="serialInput" class="ms-2 form-label">Serial Number</label>
+                                <input asp-for="SerialNumber" id="serialInput" class="form-control" placeholder="SerialNumber" type="text" />
+
+                            <div class="form-check">
+                                <label asp-for="BeingServiced" for="beingServicedInput" class="ms-2 form-label">Currently Being Serviced? (Check box for Yes)</label>
+                                <input asp-for="BeingServiced" id="beingServicedInput" name="beingServicedInput" class="form-check-input" type="checkbox" value="true" />
+
+                                <input asp-for="BeingServiced" id="beingServicedInput2" name="beingServicedInput" type="hidden" value="false" />
+                            </div>
+                            <!--Img upload-->
+
+                                <label asp-for="Notes" for="notesInput" class="ms-2 form-label">Notes</label>
+                                <textarea asp-for="Notes" id="notesInput" class="form-control" placeholder="Notes" style="height: 100px"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer modalCap1">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" form="editAssetSubmit">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model Asset //to fetch what's being passed from the controller actionmethod
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container addAssetContainer mb-4">
+    <partial name="_AssetInput" />
+</div>
+<div class="row d-flex justify-content-center mb-3">
+    <div class="col-3">
+        <button id="addAssetContainerBtn" type="button" class="btn btn-success btn-lg shadow-sm">Show Add New Asset Tool</button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">Current devices</div>
+    <div class="card-body">
+        <table id="currAssets" class="form-control cell-border hover"></table>
+    </div>
+    <div class="card-footer"></div>
+</div>
+
+<partial name="_modals" />
+
+@section Scripts {
+    <script src="~/js/assets.js" type="text/javascript"></script>
+}
+

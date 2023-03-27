@@ -1,0 +1,57 @@
+﻿@model Asset
+
+<div class="card mt-4 mb-4 shadow" id="subAddAssetDiv">
+    <div class="card-header addAssetCardCaps pt-3">
+        <h2>Enter New Asset into Inventory</h2>
+    </div>
+    <div class="card-body addAssetCardBody">
+        <form id="newAssetSubmit" method="post" asp-controller="Assets" asp-action="Create">
+            <fieldset>
+                <div class="row mb-3">
+                    <div class="col form-floating">
+                        <input asp-for="Category" id="categoryInput" class="form-control" placeholder="Category" type="text" />
+                        <label asp-for="Category" for="categoryInput" class="ms-2 form-label">Category (Laptop, Monitor, etc)</label>
+                    </div>
+                    <div class="col form-floating">
+                        <input asp-for="Brand" id="brandInput" class="form-control" placeholder="Brand" type="text" />
+                        <label asp-for="Brand" for="brandInput" class="ms-2 form-label">Brand (Sony, Dell, etc)</label>
+                    </div>
+                    <div class="col form-floating">
+                        <input asp-for="Model" id="modelInput" class="form-control" placeholder="Model" type="text" />
+                        <label asp-for="Model" for="modelInput" class="ms-2 form-label">Model (XR-1000, ImagePro, etc)</label>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-5 form-floating">
+                        <input asp-for="SerialNumber" id="serialInput" class="form-control" placeholder="SerialNumber" type="text" />
+                        <label asp-for="SerialNumber" for="serialInput" class="ms-2 form-label">Serial Number</label>
+                    </div>
+                    <div class="col form-check">
+                        <input asp-for="BeingServiced" id="beingServicedInput" name="beingServicedInput" class="form-check-input" type="checkbox" value="true" />
+                        <label asp-for="BeingServiced" for="beingServicedInput" class="ms-2 form-label">Currently Being Serviced? (Check box for Yes)</label>
+                        
+                        <input asp-for="BeingServiced" id="beingServicedInput2" name="beingServicedInput" type="hidden" value="false" />
+                    </div>
+                    <!--Img upload-->
+                    <div class="col-5 form-floating">
+                        <textarea asp-for="Notes" id="notesInput" class="form-control" placeholder="Notes" style="height: 100px"></textarea>
+                        <label asp-for="Notes" for="notesInput" class="ms-2 form-label">Notes</label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="card-footer addAssetCardCaps">
+        <button type="submit" form="newAssetSubmit" class="btn btn-info btn-lg shadow-sm"
+                style="--bs-btn-padding-y: 0.5rem; --bs-btn-padding-x: 1rem;">
+            Submit asset
+        </button>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
